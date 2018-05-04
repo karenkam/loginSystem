@@ -6,7 +6,8 @@ target 'loginSystem' do
   use_frameworks!
 
   # Pods for loginSystem
+
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-
+	
 end
