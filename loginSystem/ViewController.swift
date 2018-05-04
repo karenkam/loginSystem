@@ -23,13 +23,6 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "segueFirstToForget", sender: self)
     }
     
-    @IBAction func EmailConfirmToQuestion(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueEmailConfirmToQuestion", sender: self)
-    }
-    @IBAction func clickQuestionToEmailSent(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueQuestionToEmailSent", sender: self)
-    }
-    
     
     
     

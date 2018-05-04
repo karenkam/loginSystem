@@ -14,6 +14,10 @@
 		9C69D350208BC49E0002A7A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C69D34F208BC49E0002A7A2 /* Assets.xcassets */; };
 		A570A460DA8642C4B404AD1F /* Pods_loginSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6712A8A6AD5D3B1B25B35214 /* Pods_loginSystem.framework */; };
 		E113413D209C1ADA00482B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E113413B209C19D900482B3F /* GoogleService-Info.plist */; };
+		E113413F209C1C9200482B3F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E113413E209C1C9200482B3F /* SignupViewController.swift */; };
+		E1134141209CDCFE00482B3F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1134140209CDCFE00482B3F /* HomeViewController.swift */; };
+		E1134143209CFB2900482B3F /* EmailConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1134142209CFB2900482B3F /* EmailConfirmViewController.swift */; };
+		E1134145209D059400482B3F /* SecurityConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1134144209D059400482B3F /* SecurityConfirmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		9C69D34F208BC49E0002A7A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD8E58013189C7AD8B395E76 /* Pods-loginSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginSystem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-loginSystem/Pods-loginSystem.debug.xcconfig"; sourceTree = "<group>"; };
 		E113413B209C19D900482B3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E113413E209C1C9200482B3F /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		E1134140209CDCFE00482B3F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E1134142209CFB2900482B3F /* EmailConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailConfirmViewController.swift; sourceTree = "<group>"; };
+		E1134144209D059400482B3F /* SecurityConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityConfirmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,10 @@
 			children = (
 				9C69D33D208BBCC70002A7A2 /* AppDelegate.swift */,
 				9C69D33F208BBCC70002A7A2 /* ViewController.swift */,
+				E1134140209CDCFE00482B3F /* HomeViewController.swift */,
+				E113413E209C1C9200482B3F /* SignupViewController.swift */,
+				E1134142209CFB2900482B3F /* EmailConfirmViewController.swift */,
+				E1134144209D059400482B3F /* SecurityConfirmViewController.swift */,
 				E113413B209C19D900482B3F /* GoogleService-Info.plist */,
 				9C69D341208BBCC70002A7A2 /* Main.storyboard */,
 				9C69D34F208BC49E0002A7A2 /* Assets.xcassets */,
@@ -208,8 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E113413F209C1C9200482B3F /* SignupViewController.swift in Sources */,
+				E1134145209D059400482B3F /* SecurityConfirmViewController.swift in Sources */,
 				9C69D340208BBCC70002A7A2 /* ViewController.swift in Sources */,
+				E1134143209CFB2900482B3F /* EmailConfirmViewController.swift in Sources */,
 				9C69D33E208BBCC70002A7A2 /* AppDelegate.swift in Sources */,
+				E1134141209CDCFE00482B3F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
