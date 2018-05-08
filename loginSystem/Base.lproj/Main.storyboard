@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="loginSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="loginSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,10 +71,21 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Error: Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgp-Eh-whP">
+                                <rect key="frame" x="112.66666666666669" y="44" width="150" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="pbS-xA-l5G"/>
+                                    <constraint firstAttribute="height" constant="150" id="sxd-7T-KQW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FR2-3S-Wnz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EGp-ef-sdE"/>
+                            <constraint firstItem="Mgp-Eh-whP" firstAttribute="centerX" secondItem="FR2-3S-Wnz" secondAttribute="centerX" id="LFV-mG-7N1"/>
                             <constraint firstItem="FR2-3S-Wnz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QE8-qv-wEx"/>
                             <constraint firstAttribute="bottom" secondItem="FR2-3S-Wnz" secondAttribute="bottom" id="StD-HL-hHv"/>
                             <constraint firstItem="FR2-3S-Wnz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wVo-Rx-Nr1"/>
@@ -293,14 +304,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWi-YN-iLg">
+                                <rect key="frame" x="112" y="74" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Aee-Qg-Xu9"/>
+                                    <constraint firstAttribute="height" constant="150" id="Oxd-Ou-ib8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4M7-wr-afC" firstAttribute="centerY" secondItem="JG2-oW-vv8" secondAttribute="centerY" id="ByU-J7-TZA"/>
                             <constraint firstItem="4M7-wr-afC" firstAttribute="centerX" secondItem="JG2-oW-vv8" secondAttribute="centerX" id="tOS-lO-qBb"/>
+                            <constraint firstItem="UWi-YN-iLg" firstAttribute="centerX" secondItem="JG2-oW-vv8" secondAttribute="centerX" id="vi2-tz-ElT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JG2-oW-vv8"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassword" destination="Hde-HS-bo7" id="6bq-dd-LED"/>
+                        <outlet property="password" destination="wlR-iQ-440" id="iWa-3y-tjc"/>
+                        <outlet property="userName" destination="C4n-sP-u52" id="tDS-L3-o4V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXk-iv-7ak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -421,7 +448,7 @@
                                                 <rect key="frame" x="0.0" y="37" width="176" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer 1 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTc-Wh-eiU">
-                                                        <rect key="frame" x="0.0" y="6.3333333333333712" width="66" height="17"/>
+                                                        <rect key="frame" x="0.0" y="6.6666666666666856" width="66" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -447,7 +474,7 @@
                                                 <rect key="frame" x="0.0" y="124" width="177.66666666666666" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer 2 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRH-gf-wbH">
-                                                        <rect key="frame" x="0.0" y="6.3333333333333712" width="67.666666666666671" height="17"/>
+                                                        <rect key="frame" x="0.0" y="6.6666666666666856" width="67.666666666666671" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -507,7 +534,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="med-ft-aMZ">
-                                        <rect key="frame" x="89" y="77" width="93" height="30"/>
+                                        <rect key="frame" x="89.333333333333343" y="77" width="93" height="30"/>
                                         <state key="normal" title="Back to Login"/>
                                     </button>
                                 </subviews>
@@ -576,6 +603,6 @@
         <image name="loginSystem_Bg_X" width="1125" height="2436"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x5N-Bj-vdB"/>
+        <segue reference="dde-Fx-UjJ"/>
     </inferredMetricsTieBreakers>
 </document>

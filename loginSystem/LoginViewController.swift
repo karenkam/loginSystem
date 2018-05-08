@@ -9,13 +9,27 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var usernameTextfield: UITextField!
+    
+    /** click this button to login and go to the home page*/
     @IBAction func clickFirstToLogin(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueFirstToLogin", sender: self)
+        if let email = usernameTextfield.text, let pass = passwordTextfield.text {
+            //sign in
+            Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
+                // check user
+                if let u = user {
+                    // if not nil, go to the home page
+                    self.performSegue(withIdentifier: "segueFirstToLogin", sender: self)
+                }
+                else {
+                    // show the message that the user is not found
+                }
+            }
+        }
     }
     
     @IBAction func clickFirstToSignup(_ sender: UIButton) {
@@ -26,12 +40,17 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "segueFirstToForget", sender: self)
     }
     
+    /** display the message when the database
+        doesn't have the user's information */
+    func displayErrorLogin() {
+        
+    }
     
     
     
     override func viewDidLoad() {
         loginButton.isEnabled = false
-        setLoginButton()
+        //setLoginButton()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -41,7 +60,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    /*
     func setLoginButton(){
         if usernameTextfield.text != nil && passwordTextfield.text != nil && usernameTextfield.text != "" && passwordTextfield.text != ""{
             loginButton.isEnabled = true
@@ -50,7 +69,7 @@ class ViewController: UIViewController {
             loginButton.isEnabled = false
         }
     }
-
+*/
 
 }
 

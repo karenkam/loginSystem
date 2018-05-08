@@ -11,8 +11,30 @@ import FirebaseAuth
 
 class SignupViewController: UIViewController {
 
+    @IBOutlet weak var confirmPassword: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var userName: UITextField!
+
+    /** click from signUp page to Home page*/
     @IBAction func confirm(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueSignupToHome", sender: self)
+        if let email = userName.text, let pass = password.text, let confirmPass = confirmPassword.text {
+            // check the password and confirmPassword
+            if pass == confirmPass {
+                // create a user and sign in
+                Auth.auth().createUser(withEmail: email, password: pass) { (user, error) in
+                    self.performSegue(withIdentifier: "segueSignupToHome", sender: self)
+                }
+            }
+            else {
+                // show message that the confirm message is wrong
+            }
+        }
+    }
+    
+    /** display the message that the user's password
+        and confirmPassword are not correct */
+    func displayErrorPassword() {
+        
     }
     
     override func viewDidLoad() {
