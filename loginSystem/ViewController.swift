@@ -11,6 +11,9 @@ import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var usernameTextfield: UITextField!
     @IBAction func clickFirstToLogin(_ sender: UIButton) {
         performSegue(withIdentifier: "segueFirstToLogin", sender: self)
     }
@@ -27,6 +30,8 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        loginButton.isEnabled = false
+        setLoginButton()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -35,6 +40,15 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setLoginButton(){
+        if usernameTextfield.text != nil && passwordTextfield.text != nil && usernameTextfield.text != "" && passwordTextfield.text != ""{
+            loginButton.isEnabled = true
+        }
+        else {
+            loginButton.isEnabled = false
+        }
     }
 
 
