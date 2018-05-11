@@ -27,12 +27,14 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bj2-C1-1VN">
                                         <rect key="frame" x="31.666666666666671" y="0.0" width="68" height="17"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJO-TB-GWh">
                                         <rect key="frame" x="32.666666666666671" y="32" width="66" height="17"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -44,8 +46,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="clickFirstToLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lSx-Dh-R3R"/>
-                                            <segue destination="jzK-FC-2gh" kind="showDetail" identifier="segueFirstToLogin" id="tpq-x7-KT6"/>
+                                            <action selector="clickFirstToLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qzh-kh-Dx4"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lub-j0-JlD">
@@ -93,9 +94,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="errorMessage" destination="Mgp-Eh-whP" id="3CP-SI-Cbg"/>
                         <outlet property="loginButton" destination="X7c-5X-haO" id="3jd-k0-uOW"/>
                         <outlet property="passwordTextfield" destination="EJO-TB-GWh" id="3Gm-j7-vgs"/>
                         <outlet property="usernameTextfield" destination="Bj2-C1-1VN" id="A0o-EP-D02"/>
+                        <segue destination="jzK-FC-2gh" kind="show" identifier="segueLoginToHome" id="nE0-TH-kdK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -299,16 +302,16 @@
                                         <rect key="frame" x="140.66666666666669" y="510.33333333333337" width="55" height="30"/>
                                         <state key="normal" title="Confirm"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="segueSignupToLogin" id="dde-Fx-UjJ"/>
+                                            <action selector="clickSignupToHome:" destination="rm9-AA-tTn" eventType="touchUpInside" id="qmt-Jv-n76"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWi-YN-iLg">
-                                <rect key="frame" x="112" y="74" width="150" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Error: sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWi-YN-iLg">
+                                <rect key="frame" x="62.666666666666657" y="74" width="249.99999999999997" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Aee-Qg-Xu9"/>
                                     <constraint firstAttribute="height" constant="150" id="Oxd-Ou-ib8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="TP2-07-QwY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -325,13 +328,21 @@
                     </view>
                     <connections>
                         <outlet property="confirmPassword" destination="Hde-HS-bo7" id="6bq-dd-LED"/>
+                        <outlet property="email" destination="afa-y7-TtA" id="Gnq-c2-57h"/>
+                        <outlet property="errorMessage" destination="UWi-YN-iLg" id="Tuc-jU-Jn5"/>
                         <outlet property="password" destination="wlR-iQ-440" id="iWa-3y-tjc"/>
+                        <outlet property="phone" destination="JBc-l5-pUm" id="lHj-mf-w7S"/>
+                        <outlet property="securityA1" destination="3wc-h7-R1f" id="JUX-gv-QBc"/>
+                        <outlet property="securityA2" destination="4HW-ny-q6z" id="XMi-mC-8Rh"/>
+                        <outlet property="securityQ1" destination="QAc-jq-DTC" id="Xzm-uK-4po"/>
+                        <outlet property="securityQ2" destination="HSO-cp-pbC" id="HCI-pO-dsP"/>
                         <outlet property="userName" destination="C4n-sP-u52" id="tDS-L3-o4V"/>
+                        <segue destination="jzK-FC-2gh" kind="show" identifier="segueSignupToHome" id="5PL-1K-bRX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXk-iv-7ak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="794"/>
+            <point key="canvasLocation" x="1077.5999999999999" y="1355.9113300492611"/>
         </scene>
         <!--Email Confirm View Controller-->
         <scene sceneID="Uro-bY-lMq">
@@ -416,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBz-Mv-f67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2046" y="794"/>
+            <point key="canvasLocation" x="2046" y="1356"/>
         </scene>
         <!--Security Confirm View Controller-->
         <scene sceneID="fMq-E6-5GU">
@@ -562,7 +573,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yP-Jy-KOP">
                                 <rect key="frame" x="159" y="461" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Log out"/>
                                 <connections>
                                     <action selector="clickHomeToLogin:" destination="jzK-FC-2gh" eventType="touchUpInside" id="S8D-r3-xwB"/>
                                     <segue destination="BYZ-38-t0r" kind="showDetail" identifier="segueHomeToLogin" id="e6u-5H-pQ3"/>
@@ -596,13 +607,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HiX-aR-vnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="-680"/>
+            <point key="canvasLocation" x="25" y="-1078"/>
         </scene>
     </scenes>
     <resources>
         <image name="loginSystem_Bg_X" width="1125" height="2436"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dde-Fx-UjJ"/>
+        <segue reference="nE0-TH-kdK"/>
+        <segue reference="e6u-5H-pQ3"/>
     </inferredMetricsTieBreakers>
 </document>

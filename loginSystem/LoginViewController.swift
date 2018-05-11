@@ -11,22 +11,25 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var usernameTextfield: UITextField!
     
-    /** click this button to login and go to the home page*/
+    /** click this button to login and go to the home page */
     @IBAction func clickFirstToLogin(_ sender: UIButton) {
         if let email = usernameTextfield.text, let pass = passwordTextfield.text {
+            
             //sign in
             Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
                 // check user
                 if let u = user {
                     // if not nil, go to the home page
-                    self.performSegue(withIdentifier: "segueFirstToLogin", sender: self)
+                    self.performSegue(withIdentifier: "segueLoginToHome", sender: self)
                 }
                 else {
                     // show the message that the user is not found
+                    self.displayErrorLogin()
                 }
             }
         }
@@ -43,13 +46,15 @@ class LoginViewController: UIViewController {
     /** display the message when the database
         doesn't have the user's information */
     func displayErrorLogin() {
-        
+        errorMessage.text = "Email or password is not found."
+        errorMessage.isEnabled = true
     }
     
     
     
     override func viewDidLoad() {
-        loginButton.isEnabled = false
+        //loginButton.isEnabled = false
+        errorMessage.text = ""
         //setLoginButton()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
