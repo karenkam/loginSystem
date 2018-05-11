@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
     @IBAction func clickHomeToLogin(_ sender: UIButton) {
+        
+        // sign out
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        }
+        catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
         performSegue(withIdentifier: "segueHomeToLogin", sender: self)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

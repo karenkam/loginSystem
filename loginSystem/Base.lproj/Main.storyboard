@@ -18,29 +18,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginSystem_Bg_X" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FR2-3S-Wnz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FR2-3S-Wnz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3nI-fH-eQx">
-                                <rect key="frame" x="122.00000000000001" y="371" width="131.33333333333334" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3nI-fH-eQx">
+                                <rect key="frame" x="113" y="363" width="150" height="165"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bj2-C1-1VN">
-                                        <rect key="frame" x="31.666666666666671" y="0.0" width="68" height="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bj2-C1-1VN">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="qF9-Ua-oaO"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJO-TB-GWh">
-                                        <rect key="frame" x="32.666666666666671" y="32" width="66" height="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJO-TB-GWh">
+                                        <rect key="frame" x="0.0" y="45" width="150" height="30"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="2Mo-cD-aPc"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7c-5X-haO">
-                                        <rect key="frame" x="46.666666666666671" y="64" width="38" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7c-5X-haO">
+                                        <rect key="frame" x="56" y="90" width="38" height="30"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,19 +52,19 @@
                                             <action selector="clickFirstToLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qzh-kh-Dx4"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lub-j0-JlD">
-                                        <rect key="frame" x="0.0" y="109" width="131.33333333333334" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lub-j0-JlD">
+                                        <rect key="frame" x="9.6666666666666714" y="135" width="131" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Z-La-3XS">
-                                                <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Z-La-3XS">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="30"/>
                                                 <state key="normal" title="Signup"/>
                                                 <connections>
                                                     <action selector="clickFirstToSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eHO-fe-ccQ"/>
                                                     <segue destination="rm9-AA-tTn" kind="showDetail" identifier="segueFirstToSignup" id="SXX-js-aYS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ns-rY-cTb">
-                                                <rect key="frame" x="78.333333333333329" y="0.0" width="52.999999999999986" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ns-rY-cTb">
+                                                <rect key="frame" x="77.999999999999986" y="0.0" width="53.000000000000014" height="30"/>
                                                 <state key="normal" title="Forget?"/>
                                                 <connections>
                                                     <action selector="clickFirstToForget:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0V-IF-zZ1"/>
@@ -72,8 +75,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Error: Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgp-Eh-whP">
-                                <rect key="frame" x="112.66666666666669" y="44" width="150" height="84"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgp-Eh-whP">
+                                <rect key="frame" x="112" y="528" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="pbS-xA-l5G"/>
                                     <constraint firstAttribute="height" constant="150" id="sxd-7T-KQW"/>
@@ -85,11 +88,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3nI-fH-eQx" firstAttribute="centerX" secondItem="FR2-3S-Wnz" secondAttribute="centerX" id="AST-Bp-vvF"/>
                             <constraint firstItem="FR2-3S-Wnz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EGp-ef-sdE"/>
-                            <constraint firstItem="Mgp-Eh-whP" firstAttribute="centerX" secondItem="FR2-3S-Wnz" secondAttribute="centerX" id="LFV-mG-7N1"/>
                             <constraint firstItem="FR2-3S-Wnz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QE8-qv-wEx"/>
                             <constraint firstAttribute="bottom" secondItem="FR2-3S-Wnz" secondAttribute="bottom" id="StD-HL-hHv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mgp-Eh-whP" secondAttribute="bottom" constant="100" id="gfu-78-Ehb"/>
+                            <constraint firstItem="Mgp-Eh-whP" firstAttribute="centerX" secondItem="FR2-3S-Wnz" secondAttribute="centerX" id="trd-nt-6Fw"/>
                             <constraint firstItem="FR2-3S-Wnz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wVo-Rx-Nr1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3nI-fH-eQx" secondAttribute="bottom" constant="250" id="znc-jC-D7b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -575,8 +581,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
-                                    <action selector="clickHomeToLogin:" destination="jzK-FC-2gh" eventType="touchUpInside" id="S8D-r3-xwB"/>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="segueHomeToLogin" id="e6u-5H-pQ3"/>
+                                    <action selector="clickHomeToLogin:" destination="jzK-FC-2gh" eventType="touchUpInside" id="PgY-Ih-YRE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Helen Lee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAi-b4-7oE">
@@ -604,6 +609,9 @@
                         <color key="backgroundColor" red="0.94612165179999996" green="0.86102086310000003" blue="0.89824218749999996" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="mxZ-HF-PpV"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueHomeToLogin" id="07j-g5-S2m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HiX-aR-vnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -611,10 +619,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loginSystem_Bg_X" width="1125" height="2436"/>
+        <image name="loginBackground" width="540" height="960"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nE0-TH-kdK"/>
-        <segue reference="e6u-5H-pQ3"/>
+        <segue reference="07j-g5-S2m"/>
     </inferredMetricsTieBreakers>
 </document>
