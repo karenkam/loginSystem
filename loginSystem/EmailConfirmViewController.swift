@@ -8,9 +8,29 @@
 
 import UIKit
 
+var emailInputByuser: String = ""
+var foundMan: userSecurityAnswer = userSecurityAnswer(answer1: "", answer2: "", email: "")
+
 class EmailConfirmViewController: UIViewController {
+    @IBOutlet weak var emailNeedConfirmed: UITextField!
     @IBAction func clickEmailToSecurity(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueEmailToSecurity", sender: self)
+        
+        // TO DO: validation
+        emailInputByuser = emailNeedConfirmed.text!
+        
+        // traverse all the users
+        for e in users {
+            
+            // check if we have that user
+            if e.email == emailInputByuser {
+                foundMan = e
+                performSegue(withIdentifier: "segueEmailToSecurity", sender: self)
+            }
+            
+            else {
+                print("We don't have your email.")
+            }
+        }
     }
     
     override func viewDidLoad() {

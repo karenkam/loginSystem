@@ -7,12 +7,33 @@
 //
 
 import UIKit
+import Firebase
 
 class SecurityConfirmViewController: UIViewController {
 
+    @IBOutlet weak var answer1: UITextField!
     
+    @IBOutlet weak var answer2: UITextField!
     @IBAction func clickSecurityToLogin(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueSecurityToLogin", sender: self)
+        
+        // check security answer
+        if foundMan.answer1 == answer1.text && foundMan.answer2 == answer2.text{
+                
+            //TODO: sent password by email
+            Auth.auth().sendPasswordReset(withEmail: foundMan.email) { error in
+                if let e = error {
+                }
+                
+                // no error, go to the home page
+                else {
+                    self.performSegue(withIdentifier: "segueSecurityToLogin", sender: self)
+                }
+            }
+        }
+            
+        else {
+            print("Wrong!!!")
+        }
     }
     
     override func viewDidLoad() {

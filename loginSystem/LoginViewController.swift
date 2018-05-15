@@ -22,8 +22,10 @@ class LoginViewController: UIViewController {
             
             //sign in
             Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
+                
                 // check user
                 if let u = user {
+                    
                     // if not nil, go to the home page
                     self.performSegue(withIdentifier: "segueLoginToHome", sender: self)
                 }

@@ -9,6 +9,14 @@
 import UIKit
 import Firebase
 
+struct userSecurityAnswer {
+    let answer1: String
+    let answer2: String
+    let email: String
+}
+
+var users: [userSecurityAnswer] = []
+
 class SignupViewController: UIViewController {
 
     @IBOutlet weak var securityA2: UITextField!
@@ -34,7 +42,7 @@ class SignupViewController: UIViewController {
             }
             
             // check if all the textfiled are filled in
-            if userName == "", pass == "", confirmPass == "", email == "", phone == "", firstQuestion == "", secondQuestion == "", firstAnswer == "", secondAnswer == "" {
+            if userName == "" || pass == "" || confirmPass == "" || email == "", phone == "" || firstQuestion == "" || secondQuestion == "" || firstAnswer == "" || secondAnswer == "" {
                 
                 // show the message that shouldn't be blank
                 displayDontBlank()
@@ -42,10 +50,29 @@ class SignupViewController: UIViewController {
                 
             // if everything is OK, sign up
             else {
+                
                 // create a user and sign in
                 Auth.auth().createUser(withEmail: email, password: pass) { (user, error) in
                     if let u = user {
-                        self.performSegue(withIdentifier: "segueSignupToHome", sender: self)
+                        
+                        // save the security question's answers
+                        var person: userSecurityAnswer = userSecurityAnswer(answer1: firstAnswer, answer2: secondAnswer, email: email)
+                        users.append(person)
+                        
+                        
+                        Auth.auth().currentUser?.sendEmailVerification { (error) in
+                            
+                            // check if it has error
+                            if let e = error{
+                                
+                            }
+                                
+                            // no error, go to home page
+                            else {
+                                // TODO: check the email is confirmed
+                                self.performSegue(withIdentifier: "segueSignupToHome", sender: self)
+                            }
+                        }
                     }
                     else {
                         self.displayPasswordLimit()

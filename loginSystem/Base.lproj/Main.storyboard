@@ -348,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXk-iv-7ak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077.5999999999999" y="1355.9113300492611"/>
+            <point key="canvasLocation" x="1078" y="1018"/>
         </scene>
         <!--Email Confirm View Controller-->
         <scene sceneID="Uro-bY-lMq">
@@ -382,8 +382,7 @@
                                 <rect key="frame" x="160" y="396" width="55" height="30"/>
                                 <state key="normal" title="Confirm"/>
                                 <connections>
-                                    <action selector="clickEmailToSecurity:" destination="F9i-XS-07Y" eventType="touchUpInside" id="rhT-7Q-nqh"/>
-                                    <segue destination="3zW-OZ-Ec6" kind="showDetail" identifier="segueEmailToSecurity" id="dbu-pd-XB9"/>
+                                    <action selector="clickEmailToSecurity:" destination="F9i-XS-07Y" eventType="touchUpInside" id="2gy-Fa-YNT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -396,6 +395,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LxV-Yz-L1b"/>
                     </view>
+                    <connections>
+                        <outlet property="emailNeedConfirmed" destination="1cO-Zi-Nb3" id="ZDA-C4-TeY"/>
+                        <segue destination="3zW-OZ-Ec6" kind="show" identifier="segueEmailToSecurity" id="87Z-qx-tfh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsE-1Q-svH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -433,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBz-Mv-f67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2046" y="1356"/>
+            <point key="canvasLocation" x="2046" y="1017"/>
         </scene>
         <!--Security Confirm View Controller-->
         <scene sceneID="fMq-E6-5GU">
@@ -513,8 +516,7 @@
                                         <rect key="frame" x="102" y="274.33333333333337" width="55" height="30"/>
                                         <state key="normal" title="Confirm"/>
                                         <connections>
-                                            <action selector="clickSecurityToLogin:" destination="3zW-OZ-Ec6" eventType="touchUpInside" id="g90-ju-1pc"/>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="segueSecurityToLogin" id="x5N-Bj-vdB"/>
+                                            <action selector="clickSecurityToLogin:" destination="3zW-OZ-Ec6" eventType="touchUpInside" id="keQ-e1-J8c"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -527,6 +529,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tBy-0x-711"/>
                     </view>
+                    <connections>
+                        <outlet property="answer1" destination="ERL-0D-Hrp" id="Xxa-T8-4D0"/>
+                        <outlet property="answer2" destination="cyq-Jd-qov" id="8hp-9h-tR0"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueSecurityToLogin" id="B2r-PZ-nJA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2X-kF-5OM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -623,6 +630,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nE0-TH-kdK"/>
-        <segue reference="07j-g5-S2m"/>
+        <segue reference="B2r-PZ-nJA"/>
     </inferredMetricsTieBreakers>
 </document>
